@@ -10,7 +10,6 @@ A TypeScript starter for Next.js that includes all you need to build amazing pro
 - 🃏 **Jest** - A delightful JavaScript Testing Framework with a focus on simplicity
 - 💅 **Tailwind CSS** - Use the best bits of ES6 and CSS to style your apps without stress
 
-
 ## 🚀 Getting started
 
 You can clone this repository and run the following commands inside the project folder:
@@ -27,7 +26,6 @@ To view the project open `http://localhost:3000`.
 3. Commit your changes: `git commit -m 'Add some feature'`;
 4. Push to the branch: `git push origin my-new-feature`.
 
-**After your pull request is merged**, you can safely delete your branch.
----
+## **After your pull request is merged**, you can safely delete your branch.
 
 Made with ♥ by Junior Alves

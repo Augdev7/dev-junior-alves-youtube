@@ -2,27 +2,38 @@ import '@/styles/globals.css';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import { Suspense } from 'react';
 
 import { siteConfig } from '@/config';
+import Cursor from '@/ui/Cursor';
 
-import { Footer } from '@/components/Footer';
 import { Layout } from '@/components/Layout';
+import Navbar from '@/components/navbar/Navbar';
+
+import GlobalStyle from '@/styles/GlobalStyle';
+
+import Footer from '../ui/footer';
+import { DefaultTags } from './../ui/DefaultTags';
+import StyledComponentsRegistry from './registry';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Junior Alves',
-    default: 'Junior Alves'
+    template: '%s | AGÊNCIA UP.EXPERT',
+    default: 'Agência full service'
   },
-  description: 'Blog onde falo sobre livros e código',
+  description: 'MARKETIGN DIGITAL EM BRASILIA | (61) 9 8669-2775',
+  verification: {
+    google: 'google-site-verification=123123123'
+  },
   manifest: '/manifest.json',
-  authors: [{ name: 'Junior Alves' }],
+  authors: [{ name: 'AGÊNCIA UP.EXPERT' }],
   metadataBase: new URL(`${siteConfig.url}`),
   openGraph: {
     type: 'website',
     url: `${siteConfig.url}/cover.jpg`,
     title: siteConfig.title,
     description: siteConfig.description,
-    siteName: 'Dev Junior Alves',
+    siteName: 'UP.EXPERT',
     images: [
       {
         url: `${siteConfig.url}/cover.jpg`
@@ -52,10 +63,18 @@ export default function RootLayout({
         src="https://identity.netlify.com/v1/netlify-identity-widget.js"
       />
 
-      <html suppressHydrationWarning lang="en">
+      <html suppressHydrationWarning lang="pt-BR">
+        <DefaultTags />
         <body className={`${inter.className} w-full bg-primary`}>
           <Layout>
-            <main className="pt-28">{children}</main>
+            <Suspense fallback="...">
+              <Navbar />
+              <Cursor />
+            </Suspense>
+            <StyledComponentsRegistry>
+              <>{children}</>
+            </StyledComponentsRegistry>
+            <GlobalStyle />
           </Layout>
 
           <Footer />

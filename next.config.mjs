@@ -28,7 +28,18 @@ const nextConfig = {
     removeConsole: !isDev
   },
   images: {
-    formats: ['image/avif', 'image/webp']
+    formats: ['image/avif', 'image/webp'],
+    domains: [
+      'www.google.com',
+      'avatar.vercel.sh',
+      'faisalman.github.io',
+      'avatars.dicebear.com',
+      'res.cloudinary.com',
+      'pbs.twimg.com',
+      'd2vwwcvoksz7ty.cloudfront.net',
+      'lh3.googleusercontent.com',
+      'media.cleanshot.cloud' // only for staging purposes
+    ]
   },
   experimental: {
     swcMinify: true
