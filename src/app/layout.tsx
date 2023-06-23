@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import '@/styles/globals.css';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Script from 'next/script';
 import { Suspense } from 'react';
 
 import { siteConfig } from '@/config';
@@ -13,7 +13,6 @@ import Navbar from '@/components/navbar/Navbar';
 import GlobalStyle from '@/styles/GlobalStyle';
 
 import Footer from '../ui/footer';
-import { DefaultTags } from './../ui/DefaultTags';
 import StyledComponentsRegistry from './registry';
 
 export const metadata: Metadata = {
@@ -58,13 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Script
-        async
-        src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-      />
-
-      <html suppressHydrationWarning lang="pt-BR">
-        <DefaultTags />
+      <html suppressHydrationWarning lang="en">
         <body className={`${inter.className} w-full bg-primary`}>
           <Layout>
             <Suspense fallback="...">
@@ -76,8 +69,6 @@ export default function RootLayout({
             </StyledComponentsRegistry>
             <GlobalStyle />
           </Layout>
-
-          <Footer />
         </body>
       </html>
     </>
