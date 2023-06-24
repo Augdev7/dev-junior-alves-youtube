@@ -35,7 +35,7 @@ export default function FAQ() {
       <MaxWidthWrapper className="">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <div className="p-3">
-            <h1 className="font-display mt-5 text-4xl font-extrabold leading-[1.15] text-black sm:text-6xl sm:leading-[1.15]">
+            <h1 className="font-display mt-5 text-4xl font-extrabold leading-[1.15] text-white sm:text-6xl sm:leading-[1.15]">
               DÚVIDAS
               <br />
               <span className="bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent sm:text-5xl sm:leading-[1.15]">
