@@ -1,7 +1,7 @@
 export default async function getRepos(url: string[]) {
   if (!url) return [];
   return await Promise.all(
-    url.map(async (url) => {
+    url.map(async url => {
       const {
         description,
         stargazers_count: stars,
@@ -19,7 +19,7 @@ export default async function getRepos(url: string[]) {
             }
           })
         }
-      ).then((res) => res.json())) || {};
+      ).then(res => res.json())) || {};
 
       return {
         url,

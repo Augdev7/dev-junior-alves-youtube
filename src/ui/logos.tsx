@@ -43,21 +43,21 @@ export default function Logos({
   copy?: string;
 }) {
   return (
-    <div className="mt-20">
-      <p className="mx-auto max-w-sm text-center text-gray-600 sm:max-w-xl sm:text-lg">
+    <div className='mt-20'>
+      <p className='mx-auto max-w-sm text-center text-gray-600 sm:max-w-xl sm:text-lg'>
         {copy}
       </p>
-      <div className="mx-auto mt-8 grid w-full max-w-screen-lg grid-cols-2 items-center gap-5 px-5 sm:grid-cols-6 sm:px-0">
+      <div className='mx-auto mt-8 grid w-full max-w-screen-lg grid-cols-2 items-center gap-5 px-5 sm:grid-cols-6 sm:px-0'>
         {logos.map(({ slug, link, dimensions }) => (
           <Link
             key={slug}
             href={`https://${link}`}
-            target="_blank"
-            rel="noopener noreferer"
-            className="group relative"
+            target='_blank'
+            rel='noopener noreferer'
+            className='group relative'
           >
-            <div className="absolute z-10 flex h-full w-full translate-y-5 items-center justify-center opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-              <p className="font-semibold text-gray-700">{link}</p>
+            <div className='absolute z-10 flex h-full w-full translate-y-5 items-center justify-center opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100'>
+              <p className='font-semibold text-gray-700'>{link}</p>
               <ExpandingArrow />
             </div>
             <BlurImage

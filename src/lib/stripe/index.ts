@@ -19,7 +19,7 @@ export async function cancelSubscription(customer?: string) {
       .list({
         customer
       })
-      .then((res) => res.data[0].id);
+      .then(res => res.data[0].id);
 
     return await stripe.subscriptions.update(subscriptionId, {
       cancel_at_period_end: true,

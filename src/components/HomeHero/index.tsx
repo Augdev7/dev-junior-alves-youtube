@@ -2,8 +2,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
-import Image from 'next/image';
-import { useEffect, useState, useRef, Fragment } from 'react';
+import { memo, useCallback, useState } from 'react';
+import Image, { type ImageProps, type StaticImageData } from 'next/image';
+import { useEffect, useRef, Fragment } from 'react';
 import { HiOutlineCheck, HiChevronUpDown } from 'react-icons/hi2';
 
 import { Listbox, Combobox, Transition } from '@headlessui/react';
@@ -34,12 +35,43 @@ import { HeroBottomCard } from '../HeroBottomCard/page';
 
 import { useRouter } from 'next/navigation';
 import { Slide } from './../Slide/index';
+import GetStarted from './../../ui/GetStarted';
+
+interface ImageCardProps extends Omit<ImageProps, 'src' | 'onLoadingComplete'> {
+  src: StaticImageData;
+  onLoadingComplete: (src: string) => void;
+}
+
+const ImageCardWithOffset = memo<ImageCardProps>(function ImageCard({
+  onLoadingComplete,
+  src,
+  alt,
+  ...props
+}) {
+  return (
+    <div className='h-600 w-100 relative rounded bg-transparent shadow'>
+      <Image
+        {...props}
+        src={src}
+        alt={alt}
+        onLoadingComplete={() => onLoadingComplete(src.src)}
+      />
+    </div>
+  );
+});
 
 export function HomeHero() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(people[0]);
   const [enabled, setEnabled] = useState(false);
+
+  const [loaded, setLoaded] = useState<string[]>([]);
+
+  const handleLoaded = useCallback(
+    (color: string) => setLoaded(loaded => loaded.concat(color)),
+    []
+  );
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -92,19 +124,19 @@ export function HomeHero() {
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="show"
+      initial='hidden'
+      whileInView='show'
       viewport={{ once: false, amount: 0.25 }}
     >
-      <div className="relative isolate overflow-hidden py-16 sm:py-24 lg:py-4">
+      <div className='relative isolate overflow-hidden py-16 sm:py-24 lg:py-4'>
         <Image
           src={profilePic}
-          alt="Image home"
+          alt='Image home'
           fill
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,[IMAGE_CODE_FROM_PNG_PIXEL]"
+          placeholder='blur'
+          blurDataURL='data:image/png;base64,[IMAGE_CODE_FROM_PNG_PIXEL]'
           quality={100}
-          sizes="100vw"
+          sizes='100vw'
           className={`object-cover duration-700 ease-in-out group-hover:opacity-75 ${
             loading
               ? 'scale-110 blur-2xl grayscale'
@@ -112,14 +144,14 @@ export function HomeHero() {
           }}`}
           onLoadingComplete={() => setLoading(false)}
         />
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+        <div className='mx-auto max-w-7xl px-6 lg:px-8'>
+          <div className='mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2'>
             <div
               className={`absolute inset-0 top-[120px]  mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
             >
-              <div className="mt-5 flex flex-col items-center justify-center">
-                <div className="h-5 w-5 rounded-full bg-[#915EFF]" />
-                <div className="violet-gradient h-40 w-1 sm:h-80" />
+              <div className='mt-5 flex flex-col items-center justify-center'>
+                <div className='h-5 w-5 rounded-full bg-[#915EFF]' />
+                <div className='violet-gradient h-40 w-1 sm:h-80' />
               </div>
 
               <div>
@@ -131,7 +163,7 @@ export function HomeHero() {
                   transition={{ duration: 0.5, delay: 0.6 }}
                   className={`${styles.heroHeadText} text-white`}
                 >
-                  INOVAR É <span className="text-[#915EFF]">CRIAR</span>
+                  INOVAR É <span className='text-[#915EFF]'>CRIAR</span>
                 </motion.h1>
                 <motion.p
                   initial={{ y: 8, opacity: 0 }}
@@ -139,41 +171,35 @@ export function HomeHero() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className={`${styles.heroSubText} md:max-w[650px] text-base font-medium text-textDark`}
                 >
-                  <span className="text-[#915EFF] sm:block" />
+                  <span className='text-[#915EFF] sm:block' />
                   CONECTAMOS PESSOAS
                 </motion.p>
               </div>
             </div>
-            <div className="py-24">
-              <Image
+            <div className='py-24'>
+              <ImageCardWithOffset
+                onLoadingComplete={handleLoaded}
                 src={ImgHome}
-                alt="Image home"
-                width={400}
-                height={1000}
-                className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${
-                  loading
-                    ? 'scale-110 blur-2xl grayscale'
-                    : 'scale-100 blur-0 grayscale-0'
-                }}`}
-                onLoadingComplete={() => setLoading(false)}
+                alt='Vercel logo'
+                lazyBoundary='200px'
               />
             </div>
             <div
-              data-aos="fade-right"
-              className="gap grid grid-flow-col sm:grid-cols-1 lg:pt-2"
+              data-aos='fade-right'
+              className='gap grid w-full grid-flow-col flex-col items-center justify-center sm:grid-cols-1 lg:pt-2'
             >
-              <Slide />
+              <GetStarted />
             </div>
           </div>
         </div>
-        <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
+        <div className='xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center'>
           <button
-            id="al"
-            aria-label="Name"
-            type="button"
+            id='al'
+            aria-label='Name'
+            type='button'
             onClick={() => router.push('#about')}
           >
-            <div className="flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 border-secondary p-2">
+            <div className='flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 border-secondary p-2'>
               <motion.div
                 animate={{
                   y: [0, 24, 0]
@@ -183,7 +209,7 @@ export function HomeHero() {
                   repeat: Infinity,
                   repeatType: 'loop'
                 }}
-                className="mb-1 h-3 w-3 rounded-full bg-secondary"
+                className='mb-1 h-3 w-3 rounded-full bg-secondary'
               />
             </div>
           </button>

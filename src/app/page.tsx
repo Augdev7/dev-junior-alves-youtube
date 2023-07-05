@@ -1,7 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { siteConfig } from '@/config';
 
+import { CardContact } from './../components/CardContact/index';
+import { Hero } from './../components/Hero/index';
 import { HeroBottomCard } from './../components/HeroBottomCard/page';
 import { HomeHero } from './../components/HomeHero/index';
+import Portifolio from './../components/Portifolio/Projects';
+import { SectionSobre } from './../components/SectionSobre/index';
 import FAQ from './../ui/faq';
 
 const title = 'Home | Agência up.expert';
@@ -36,9 +41,12 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <>
-      <HomeHero />
+      <Hero />
       <HeroBottomCard />
+      <SectionSobre />
+      <Portifolio />
       <FAQ />
+      <CardContact />
     </>
   );
 }

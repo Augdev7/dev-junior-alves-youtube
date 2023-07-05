@@ -17,7 +17,7 @@ export async function getBlurDataURL(url: string | null) {
 
 export function getImages(urls: string[]) {
   return Promise.all(
-    urls.map(async (url) => ({
+    urls.map(async url => ({
       url,
       blurDataURL: await getBlurDataURL(url)
     }))

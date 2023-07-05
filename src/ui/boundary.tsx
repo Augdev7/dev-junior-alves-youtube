@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 import clsx from 'clsx';
@@ -64,7 +65,7 @@ export const Boundary = ({
           }
         )}
       >
-        {labels.map((label) => {
+        {labels.map(label => {
           return (
             <Label
               key={label}

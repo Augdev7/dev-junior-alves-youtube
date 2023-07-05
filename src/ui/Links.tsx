@@ -20,9 +20,9 @@ export default function Links({ path, name, last }: LinkProps) {
         last ? ' before:hidden before:w-0' : ''
       }`}
     >
-      <div className="last flex items-center gap-6 hover:last-of-type:-rotate-12">
-        <div className="">{name}</div>
-        <BsArrowUpRight className="" />
+      <div className='last flex items-center gap-6 hover:last-of-type:-rotate-12'>
+        <div className=''>{name}</div>
+        <BsArrowUpRight className='' />
       </div>
     </Link>
   );

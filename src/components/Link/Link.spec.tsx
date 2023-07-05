@@ -4,7 +4,7 @@ import { Link } from './Link';
 
 describe('<Link />', () => {
   it('should render default correctly', () => {
-    const { container } = render(<Link href="/">Link</Link>);
+    const { container } = render(<Link href='/'>Link</Link>);
 
     const link = screen.getByRole('link', { name: /link/i });
 

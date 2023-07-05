@@ -7,9 +7,9 @@ interface MenuIconProps {
 
 export default function IconMenu({ icon, text }: MenuIconProps) {
   return (
-    <div className="flex items-center justify-start space-x-2">
+    <div className='flex items-center justify-start space-x-2'>
       {icon}
-      <p className="text-sm">{text}</p>
+      <p className='text-sm'>{text}</p>
     </div>
   );
 }

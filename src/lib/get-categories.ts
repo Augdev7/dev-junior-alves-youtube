@@ -42,7 +42,7 @@ export const getCategories = cache((): Category[] => [
 
 export async function fetchCategoryBySlug(slug: string | undefined) {
   // Assuming it always return expected categories
-  return getCategories().find((category) => category.slug === slug);
+  return getCategories().find(category => category.slug === slug);
 }
 
 export async function fetchCategories(): Promise<Category[]> {
@@ -53,7 +53,7 @@ async function findSubCategory(
   category: Category | undefined,
   subCategorySlug: string | undefined
 ) {
-  return category?.items.find((category) => category.slug === subCategorySlug);
+  return category?.items.find(category => category.slug === subCategorySlug);
 }
 
 export async function fetchSubCategory(

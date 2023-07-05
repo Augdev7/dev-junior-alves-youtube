@@ -14,7 +14,7 @@ import {
   Storefront
 } from 'phosphor-react';
 
-import Bg from '/public/banner1.webp';
+import Bg from '/public/mkt-digital.webp';
 
 import {
   Container,
@@ -46,7 +46,7 @@ export function Hero() {
                 ]}
                 loop
                 cursor
-                cursorStyle="|"
+                cursorStyle='|'
                 typeSpeed={70}
                 deleteSpeed={50}
                 delaySpeed={1000}
@@ -58,8 +58,8 @@ export function Hero() {
             entregar resultados financeiros para o seu negócio nas primeiras
             semanas.
           </p>
-          <Link href="https://api.whatsapp.com/send?phone=5561986692775">
-            <button className="button i-button">Entrar em contato</button>
+          <Link href='https://api.whatsapp.com/send?phone=5561986692775'>
+            <button className='button i-button'>Entrar em contato</button>
           </Link>
         </Text>
       </Content>
@@ -67,11 +67,11 @@ export function Hero() {
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
           <Image
             src={Bg}
-            alt="Hero image"
-            placeholder="blur"
+            alt='Hero image'
+            placeholder='blur'
             width={700}
             height={475}
-            sizes="100vw"
+            sizes='100vw'
             style={{
               width: '100%',
               height: 'auto'
@@ -81,28 +81,28 @@ export function Hero() {
       </HeroImg>
       <BoxContainer>
         <BoxItem>
-          <span className="icon">
-            <Storefront size={84} color="#171f38" weight="fill" />
+          <span className='icon'>
+            <Storefront size={84} color='#fdc50f' weight='fill' />
           </span>
-          <span className="career-desc">
+          <span className='career-desc'>
             <h2>PUBLICIDADE</h2>
             <p>Elabore e surpreenda com essa energia que move o mercado.</p>
           </span>
         </BoxItem>
         <BoxItem>
-          <span className="icon">
-            <PenNibStraight size={84} color="#171f38" weight="fill" />
+          <span className='icon'>
+            <PenNibStraight size={84} color='#fdc50f' weight='fill' />
           </span>
-          <span className="career-desc">
+          <span className='career-desc'>
             <h2>MÍDIA CONTEÚDO</h2>
             <p>Conheça a ferramenta que irá crescer a sua produtividade</p>
           </span>
         </BoxItem>
         <BoxItem>
-          <span className="icon">
-            <Gauge size={84} color="#171f38" weight="fill" />
+          <span className='icon'>
+            <Gauge size={84} color='#fdc50f' weight='fill' />
           </span>
-          <span className="career-desc">
+          <span className='career-desc'>
             <h2>PERFORMANCE</h2>
             <p>
               Priorize o seu propósito! Mantenha o foco e encontre a solução

@@ -8,8 +8,8 @@ export default function TabSelect({
   selectAction: (option: string) => void;
 }) {
   return (
-    <div className="relative inline-flex items-center space-x-3">
-      {options.map((option) => (
+    <div className='relative inline-flex items-center space-x-3'>
+      {options.map(option => (
         <button
           key={option}
           className={`${

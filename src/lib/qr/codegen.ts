@@ -645,7 +645,7 @@ namespace qrcodegen {
       data: Readonly<Array<byte>>,
       divisor: Readonly<Array<byte>>
     ): Array<byte> {
-      const result: Array<byte> = divisor.map((_) => 0);
+      const result: Array<byte> = divisor.map(_ => 0);
       for (const b of data) {
         // Polynomial division
         const factor: byte = b ^ (result.shift() as byte);

@@ -19,13 +19,13 @@ const ToolTip: FC<Props> = ({ children, tooltip }): JSX.Element => {
 
         tooltipRef.current.style.left = clientX - left + 'px';
       }}
-      className="group relative inline-block"
+      className='group relative inline-block'
     >
       {children}
       {tooltip ? (
         <span
           ref={tooltipRef}
-          className="invisible absolute top-full mt-2 whitespace-nowrap rounded bg-blue-500 p-1 text-white opacity-0 transition group-hover:visible group-hover:opacity-100"
+          className='invisible absolute top-full mt-2 whitespace-nowrap rounded bg-blue-500 p-1 text-white opacity-0 transition group-hover:visible group-hover:opacity-100'
         >
           {tooltip}
         </span>

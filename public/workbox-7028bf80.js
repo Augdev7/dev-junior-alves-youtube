@@ -15,7 +15,7 @@ define(['exports'], function (t) {
   try {
     self['workbox:routing:6.5.3'] && _();
   } catch (t) {}
-  const n = (t) => (t && 'object' == typeof t ? t : { handle: t });
+  const n = t => (t && 'object' == typeof t ? t : { handle: t });
   class r {
     constructor(t, e, s = 'GET') {
       (this.handler = n(e)), (this.match = t), (this.method = s);
@@ -45,18 +45,18 @@ define(['exports'], function (t) {
       return this.t;
     }
     addFetchListener() {
-      self.addEventListener('fetch', (t) => {
+      self.addEventListener('fetch', t => {
         const { request: e } = t,
           s = this.handleRequest({ request: e, event: t });
         s && t.respondWith(s);
       });
     }
     addCacheListener() {
-      self.addEventListener('message', (t) => {
+      self.addEventListener('message', t => {
         if (t.data && 'CACHE_URLS' === t.data.type) {
           const { payload: e } = t.data,
             s = Promise.all(
-              e.urlsToCache.map((e) => {
+              e.urlsToCache.map(e => {
                 'string' == typeof e && (e = [e]);
                 const s = new Request(...e);
                 return this.handleRequest({ request: s, event: t });
@@ -90,7 +90,7 @@ define(['exports'], function (t) {
       return (
         c instanceof Promise &&
           (this.o || h) &&
-          (c = c.catch(async (n) => {
+          (c = c.catch(async n => {
             if (h)
               try {
                 return await h.handle({
@@ -181,10 +181,9 @@ define(['exports'], function (t) {
       runtime: 'runtime',
       suffix: 'undefined' != typeof registration ? registration.scope : ''
     },
-    f = (t) =>
-      [l.prefix, t, l.suffix].filter((t) => t && t.length > 0).join('-'),
-    w = (t) => t || f(l.precache),
-    d = (t) => t || f(l.runtime);
+    f = t => [l.prefix, t, l.suffix].filter(t => t && t.length > 0).join('-'),
+    w = t => t || f(l.precache),
+    d = t => t || f(l.runtime);
   function p(t, e) {
     const s = new URL(t);
     for (const t of e) s.searchParams.delete(t);
@@ -284,7 +283,7 @@ define(['exports'], function (t) {
     async cachePut(t, e) {
       const n = m(t);
       var r;
-      await ((r = 0), new Promise((t) => setTimeout(t, r)));
+      await ((r = 0), new Promise(t => setTimeout(t, r)));
       const i = await this.getCacheKey(n, 'write');
       if (!e)
         throw new s('cache-put-with-no-response', {
@@ -362,7 +361,7 @@ define(['exports'], function (t) {
       for (const e of this.u.plugins)
         if ('function' == typeof e[t]) {
           const s = this.m.get(e),
-            n = (n) => {
+            n = n => {
               const r = Object.assign(Object.assign({}, n), { state: s });
               return e[t](r);
             };
@@ -479,7 +478,7 @@ define(['exports'], function (t) {
       q.apply(this, arguments)
     );
   }
-  const D = (t, e) => e.some((e) => t instanceof e);
+  const D = (t, e) => e.some(e => t instanceof e);
   let U, x;
   const L = new WeakMap(),
     I = new WeakMap(),
@@ -581,7 +580,7 @@ define(['exports'], function (t) {
         });
         return (
           e
-            .then((e) => {
+            .then(e => {
               e instanceof IDBCursor && L.set(e, t);
             })
             .catch(() => {}),
@@ -593,7 +592,7 @@ define(['exports'], function (t) {
     const e = k(t);
     return e !== t && (E.set(t, e), N.set(e, t)), e;
   }
-  const P = (t) => N.get(t);
+  const P = t => N.get(t);
   const M = ['get', 'getKey', 'getAll', 'getAllKeys', 'count'],
     W = ['put', 'add', 'delete', 'clear'],
     j = new Map();
@@ -618,7 +617,7 @@ define(['exports'], function (t) {
     };
     return j.set(e, i), i;
   }
-  O = ((t) =>
+  O = (t =>
     q({}, t, {
       get: (e, s, n) => S(e, s) || t.get(e, s, n),
       has: (e, s) => !!S(e, s) || t.has(e, s)
@@ -627,7 +626,7 @@ define(['exports'], function (t) {
     self['workbox:expiration:6.5.3'] && _();
   } catch (t) {}
   const K = 'cache-entries',
-    A = (t) => {
+    A = t => {
       const e = new URL(t, location.href);
       return (e.hash = ''), e.href;
     };
@@ -645,7 +644,7 @@ define(['exports'], function (t) {
         this._ &&
           (function (t, { blocked: e } = {}) {
             const s = indexedDB.deleteDatabase(t);
-            e && s.addEventListener('blocked', (t) => e(t.oldVersion, t)),
+            e && s.addEventListener('blocked', t => e(t.oldVersion, t)),
               B(s).then(() => {});
           })(this._);
     }
@@ -699,7 +698,7 @@ define(['exports'], function (t) {
               o = B(a);
             return (
               n &&
-                a.addEventListener('upgradeneeded', (t) => {
+                a.addEventListener('upgradeneeded', t => {
                   n(
                     B(a.result),
                     t.oldVersion,
@@ -709,14 +708,14 @@ define(['exports'], function (t) {
                   );
                 }),
               s &&
-                a.addEventListener('blocked', (t) =>
+                a.addEventListener('blocked', t =>
                   s(t.oldVersion, t.newVersion, t)
                 ),
               o
-                .then((t) => {
+                .then(t => {
                   i && t.addEventListener('close', () => i()),
                     r &&
-                      t.addEventListener('versionchange', (t) =>
+                      t.addEventListener('versionchange', t =>
                         r(t.oldVersion, t.newVersion, t)
                       );
                 })
@@ -1094,7 +1093,7 @@ define(['exports'], function (t) {
     createHandlerBoundToURL(t) {
       const e = this.getCacheKeyForURL(t);
       if (!e) throw new s('non-precached-url', { url: t });
-      return (s) => (
+      return s => (
         (s.request = new Request(t)),
         (s.params = Object.assign({ cacheKey: e }, s.params)),
         this.strategy.handle(s)
@@ -1119,7 +1118,7 @@ define(['exports'], function (t) {
           (i.hash = ''), yield i.href;
           const a = (function (t, e = []) {
             for (const s of [...t.searchParams.keys()])
-              e.some((t) => t.test(s)) && t.searchParams.delete(s);
+              e.some(t => t.test(s)) && t.searchParams.delete(s);
             return t;
           })(i, e);
           if ((yield a.href, s && a.pathname.endsWith('/'))) {
@@ -1214,7 +1213,7 @@ define(['exports'], function (t) {
     (t.NetworkFirst = class extends v {
       constructor(t = {}) {
         super(t),
-          this.plugins.some((t) => 'cacheWillUpdate' in t) ||
+          this.plugins.some(t => 'cacheWillUpdate' in t) ||
             this.plugins.unshift(u),
           (this.Z = t.networkTimeoutSeconds || 0);
       }
@@ -1241,7 +1240,7 @@ define(['exports'], function (t) {
       tt({ request: t, logs: e, handler: s }) {
         let n;
         return {
-          promise: new Promise((e) => {
+          promise: new Promise(e => {
             n = setTimeout(async () => {
               e(await s.cacheMatch(t));
             }, 1e3 * this.Z);
@@ -1272,7 +1271,7 @@ define(['exports'], function (t) {
     (t.StaleWhileRevalidate = class extends v {
       constructor(t = {}) {
         super(t),
-          this.plugins.some((t) => 'cacheWillUpdate' in t) ||
+          this.plugins.some(t => 'cacheWillUpdate' in t) ||
             this.plugins.unshift(u);
       }
       async D(t, e) {
@@ -1292,16 +1291,16 @@ define(['exports'], function (t) {
       }
     }),
     (t.cleanupOutdatedCaches = function () {
-      self.addEventListener('activate', (t) => {
+      self.addEventListener('activate', t => {
         const e = w();
         t.waitUntil(
           (async (t, e = '-precache-') => {
             const s = (await self.caches.keys()).filter(
-              (s) =>
+              s =>
                 s.includes(e) && s.includes(self.registration.scope) && s !== t
             );
-            return await Promise.all(s.map((t) => self.caches.delete(t))), s;
-          })(e).then((t) => {})
+            return await Promise.all(s.map(t => self.caches.delete(t))), s;
+          })(e).then(t => {})
         );
       });
     }),

@@ -14,7 +14,7 @@ export async function GET() {
     language: 'en'
   });
 
-  articles.forEach((article) => {
+  articles.forEach(article => {
     feed.item({
       title: article.title,
       description: article.description,

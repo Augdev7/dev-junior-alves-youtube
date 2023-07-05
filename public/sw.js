@@ -4,7 +4,7 @@ if (!self.define) {
   const a = (a, i) => (
     (a = new URL(a + '.js', i).href),
     s[a] ||
-      new Promise((s) => {
+      new Promise(s => {
         if ('document' in self) {
           const e = document.createElement('script');
           (e.src = a), (e.onload = s), document.head.appendChild(e);
@@ -22,9 +22,9 @@ if (!self.define) {
       location.href;
     if (s[n]) return;
     let t = {};
-    const r = (e) => a(e, n),
+    const r = e => a(e, n),
       f = { module: { uri: n }, exports: t, require: r };
-    s[n] = Promise.all(i.map((e) => f[e] || r(e))).then((e) => (c(...e), t));
+    s[n] = Promise.all(i.map(e => f[e] || r(e))).then(e => (c(...e), t));
   };
 }
 define(['./workbox-7028bf80'], function (e) {

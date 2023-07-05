@@ -129,7 +129,7 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    margin: 0 0 10px 0;
+    margin: 10px 0 10px 0;
     font-weight: 900;
     color: var(--lightest-slate);
     line-height: 1.1;

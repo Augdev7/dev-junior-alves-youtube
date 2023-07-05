@@ -7,7 +7,7 @@ import MaxWidthWrapper from '../components/shared//max-width-wrapper';
 import { Github, LinkedIn, Logo, Twitter } from '../components/shared/icons';
 
 const navigation = {
-  product: [{ name: 'Pricing', href: '/pricing' }],
+  product: [{ name: 'Planos', href: '/planos' }],
   company: [{ name: 'Changelog', href: '/changelog' }],
   resources: [{ name: 'Metatags API', href: '/metatags' }],
   legal: [
@@ -25,64 +25,62 @@ export default function Footer() {
       : `https://dub.sh${href}?utm_source=${domain}&utm_medium=referral&utm_campaign=custom-domain`;
 
   return (
-    <footer className="z-10 border-t border-gray-200 bg-white/50 py-8 backdrop-blur-lg">
-      <MaxWidthWrapper className="pt-10">
-        <div className="xl:grid xl:grid-cols-5 xl:gap-8">
-          <div className="space-y-8 xl:col-span-2">
+    <footer className='gray-950/50 z-10 border-t border-gray-200 py-8 backdrop-blur-lg sm:px-8'>
+      <MaxWidthWrapper className='pt-10'>
+        <div className='xl:grid xl:grid-cols-5 xl:gap-8'>
+          <div className='space-y-8 xl:col-span-2'>
             <Link href={createHref('/')}>
-              <span className="sr-only">up.expert Logo</span>
-              <Logo className="h-7 w-7 text-gray-600" />
+              <span className='sr-only'>up.expert Logo</span>
+              <Logo className='h-7 w-7 text-gray-300' />
             </Link>
-            <p className="max-w-xs text-sm text-gray-900">
+            <p className='mt-6 text-base leading-7'>
               Somos uma Agência de Marketing Digital Full Service com uma
               combinação única de talentos criados para a era digital. Geramos
               ideias e estratégias impulsionadas pela percepção do consumidor e
               ampliadas por um domínio sem precedentes da tecnologia.
             </p>
-            <div className="flex items-center space-x-2">
+            <div className='flex items-center space-x-2'>
               <a
-                href="https://twitter.com/dubdotsh"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
+                href='https://twitter.com/dubdotsh'
+                target='_blank'
+                rel='noreferrer'
+                className='rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200'
               >
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-5 w-5 text-gray-600" />
+                <span className='sr-only'>Twitter</span>
+                <Twitter className='h-5 w-5 text-[#543295]' />
               </a>
-              <div className="h-8 border-l border-gray-200" />
+              <div className='h-8 border-l border-gray-200' />
               <a
-                href="https://github.com/steven-tey/dub"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
+                href='https://github.com/steven-tey/dub'
+                target='_blank'
+                rel='noreferrer'
+                className='rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200'
               >
-                <span className="sr-only">Github</span>
-                <Github className="h-5 w-5 text-gray-600" />
+                <span className='sr-only'>Github</span>
+                <Github className='h-5 w-5 text-[#543295]' />
               </a>
-              <div className="h-8 border-l border-gray-200" />
+              <div className='h-8 border-l border-gray-200' />
               <a
-                href="https://www.linkedin.com/company/dubhq/"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
+                href='https://www.linkedin.com/company/dubhq/'
+                target='_blank'
+                rel='noreferrer'
+                className='rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200'
               >
-                <span className="sr-only">LinkedIn</span>
-                <LinkedIn className="h-5 w-5" fill="#52525B" />
+                <span className='sr-only'>LinkedIn</span>
+                <LinkedIn className='h-5 w-5' fill='#543295' />
               </a>
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-3 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+          <div className='mt-16 grid grid-cols-2 gap-8 xl:col-span-3 xl:mt-0'>
+            <div className='md:grid md:grid-cols-2 md:gap-8'>
               <div>
-                <h3 className="text-sm font-semibold text-gray-900">
-                  Hospedagem
-                </h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.product.map((item) => (
+                <h3 className='text-base leading-7'>Hospedagem</h3>
+                <ul role='list' className='mt-4 space-y-4'>
+                  {navigation.product.map(item => (
                     <li key={item.name}>
                       <Link
                         href={createHref(item.href)}
-                        className="text-sm text-gray-500 hover:text-gray-900"
+                        className='text-sm hover:text-[#543295]'
                       >
                         {item.name}
                       </Link>
@@ -90,14 +88,14 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold text-gray-600">Tools</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.company.map((item) => (
+              <div className='mt-10 md:mt-0'>
+                <h3 className='text-base leading-7 text-gray-100'>Serviços</h3>
+                <ul role='list' className='mt-4 space-y-4'>
+                  {navigation.company.map(item => (
                     <li key={item.name}>
                       <Link
                         href={createHref(item.href)}
-                        className="text-sm text-gray-500 hover:text-gray-900"
+                        className='text-sm hover:text-[#543295]'
                       >
                         {item.name}
                       </Link>
@@ -106,15 +104,15 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+            <div className='md:grid md:grid-cols-2 md:gap-8'>
               <div>
-                <h3 className="text-sm font-semibold text-gray-600">Company</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.resources.map((item) => (
+                <h3 className='text-base leading-7 text-gray-100'>Company</h3>
+                <ul role='list' className='mt-4 space-y-4'>
+                  {navigation.resources.map(item => (
                     <li key={item.name}>
                       <Link
                         href={createHref(item.href)}
-                        className="text-sm text-gray-500 hover:text-gray-900"
+                        className='text-sm hover:text-[#543295]'
                       >
                         {item.name}
                       </Link>
@@ -122,14 +120,14 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold text-gray-600">Legal</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.legal.map((item) => (
+              <div className='mt-10 md:mt-0'>
+                <h3 className='text-base leading-7 text-gray-100'>Legal</h3>
+                <ul role='list' className='mt-4 space-y-4'>
+                  {navigation.legal.map(item => (
                     <li key={item.name}>
                       <Link
                         href={createHref(item.href)}
-                        className="text-sm text-gray-500 hover:text-gray-900"
+                        className='text-sm hover:text-[#543295]'
                       >
                         {item.name}
                       </Link>
@@ -140,10 +138,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-sm leading-5 text-gray-500">
+        <div className='mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24'>
+          <p className='text-sm leading-7'>
             © {new Date().getFullYear()} Agência full service{' '}
-            <span className="text-amber-300">UP.EXPERT</span>
+            <span className='text-amber-300'>UP.EXPERT</span>
           </p>
         </div>
       </MaxWidthWrapper>

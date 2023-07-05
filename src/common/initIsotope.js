@@ -8,7 +8,7 @@ const initIsotope = () => {
   var iso;
 
   if (grid.length >= 1) {
-    grid.forEach((item) => {
+    grid.forEach(item => {
       // eslint-disable-next-line no-undef
 
       iso = new Isotope(item, {

@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import './styles.css';
+import Image from 'next/image';
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -57,20 +59,22 @@ export const Slide = () => {
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
-        <motion.img
+        <motion.Image
           key={page}
           src={images[imageIndex]}
-          alt="img"
+          alt='img'
+          width={500}
+          height={500}
           custom={direction}
           variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
+          initial='enter'
+          animate='center'
+          exit='exit'
           transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
           }}
-          drag="x"
+          drag='x'
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={1}
           onDragEnd={(e, { offset, velocity }) => {
@@ -84,10 +88,10 @@ export const Slide = () => {
           }}
         />
       </AnimatePresence>
-      <div className="next" onClick={() => paginate(1)}>
+      <div className='next' onClick={() => paginate(1)}>
         {'‣'}
       </div>
-      <div className="prev" onClick={() => paginate(-1)}>
+      <div className='prev' onClick={() => paginate(-1)}>
         {'‣'}
       </div>
     </>

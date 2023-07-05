@@ -23,8 +23,8 @@ const Switch = ({
   return (
     <SwitchPrimitive.Root
       checked={checked}
-      name="switch"
-      onCheckedChange={(checked) => fn(checked)}
+      name='switch'
+      onCheckedChange={checked => fn(checked)}
       disabled={disabled}
       className={clsx(
         disabled ? 'cursor-not-allowed' : 'cursor-pointer',

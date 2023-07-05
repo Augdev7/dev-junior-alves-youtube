@@ -39,19 +39,19 @@ import { Container } from './styles';
 export function AnimatedText({ text }: Props) {
   return (
     <Container>
-      <div className="mx-auto flex w-full items-center justify-center overflow-hidden text-center lg:py-2">
+      <div className='mx-auto flex w-full items-center justify-center overflow-hidden text-center lg:py-2'>
         <motion.h1
           className={
             '${}className} text-dark inline-block w-full text-8xl font-bold capitalize text-neutral-950'
           }
           variants={quote}
-          initial="initial"
-          animate="animate"
+          initial='initial'
+          animate='animate'
         >
           {text.split(' ').map((word, index) => (
             <motion.span
               key={word + '_' + index}
-              className="inline-block"
+              className='inline-block'
               variants={singelword}
             >
               {word}&nbsp;

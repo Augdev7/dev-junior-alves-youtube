@@ -25,14 +25,12 @@ export const getProduct = async (id: string) => {
   const products = await getProducts();
   const reviews = await getReviews();
 
-  const product = products.find(
-    (product) => product.id === id
-  ) as SingleProduct;
+  const product = products.find(product => product.id === id) as SingleProduct;
 
   return {
     product,
     reviews,
-    similarProducts: products.filter((product) => product.id !== id)
+    similarProducts: products.filter(product => product.id !== id)
   };
 };
 

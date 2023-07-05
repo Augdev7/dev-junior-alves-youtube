@@ -31,30 +31,30 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <div className="border-t border-gray-200 bg-white/10 py-20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur">
-      <MaxWidthWrapper className="">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          <div className="p-3">
-            <h1 className="font-display mt-5 text-4xl font-extrabold leading-[1.15] text-white sm:text-6xl sm:leading-[1.15]">
+    <div className='border-t border-gray-200 bg-white/10 py-20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur'>
+      <MaxWidthWrapper className=''>
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+          <div className='p-3'>
+            <h1 className='font-display mt-5 text-4xl font-extrabold leading-[1.15] text-white sm:text-6xl sm:leading-[1.15]'>
               DÚVIDAS
               <br />
-              <span className="bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent sm:text-5xl sm:leading-[1.15]">
+              <span className='bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent sm:text-5xl sm:leading-[1.15]'>
                 FREQUENTES
               </span>
             </h1>
           </div>
           <Accordion
-            type="single"
+            type='single'
             collapsible
-            className="col-span-2 px-3 sm:px-0"
+            className='col-span-2 px-3 sm:px-0'
           >
             {faqs.map((faq, idx) => (
               <AccordionItem key={idx} value={idx.toString()}>
-                <AccordionTrigger className="py-2">
-                  <h3 className="text-left text-lg">{faq.question}</h3>
+                <AccordionTrigger className='py-2'>
+                  <h2 className='text-left text-lg'>{faq.question}</h2>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="py-4">{faq.answer}</div>
+                  <div className='py-4'>{faq.answer}</div>
                 </AccordionContent>
               </AccordionItem>
             ))}

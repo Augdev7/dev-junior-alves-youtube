@@ -289,7 +289,7 @@ export function QRCodeCanvas(props: QRPropsCanvas) {
   if (imgSrc != null) {
     img = (
       <img
-        alt="QR code"
+        alt='QR code'
         src={imgSrc}
         key={imgSrc}
         style={{ display: 'none' }}
@@ -353,7 +353,7 @@ export function QRCodeSVG(props: QRPropsSVG) {
         width={calculatedImageSettings.w}
         x={calculatedImageSettings.x + margin}
         y={calculatedImageSettings.y + margin}
-        preserveAspectRatio="none"
+        preserveAspectRatio='none'
       />
     );
   }
@@ -376,9 +376,9 @@ export function QRCodeSVG(props: QRPropsSVG) {
       <path
         fill={bgColor}
         d={`M0,0 h${numCells}v${numCells}H0z`}
-        shapeRendering="crispEdges"
+        shapeRendering='crispEdges'
       />
-      <path fill={fgColor} d={fgPath} shapeRendering="crispEdges" />
+      <path fill={fgColor} d={fgPath} shapeRendering='crispEdges' />
       {image}
     </svg>
   );
@@ -436,7 +436,7 @@ export function getQRAsSVGDataUri(props: QRProps) {
 }
 
 function waitUntilImageLoaded(img: HTMLImageElement, src: string) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     function onFinish() {
       img.onload = null;
       img.onerror = null;

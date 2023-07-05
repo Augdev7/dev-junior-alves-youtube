@@ -6,13 +6,13 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Junior Alves</title>
-        <link href="/img/bg.png" rel="shorcut icon" />
-        <link href="/img/bg.png" rel="apple-touch-icon" />
-        <link href="/manifest.json" rel="manifest" />
-        <meta content="Junior Alves" name="description" />
+        <link href='/img/bg.png' rel='shorcut icon' />
+        <link href='/img/bg.png' rel='apple-touch-icon' />
+        <link href='/manifest.json' rel='manifest' />
+        <meta content='Junior Alves' name='description' />
       </Head>
 
-      <main className="min-h-screen">
+      <main className='min-h-screen'>
         <Component {...pageProps} />
       </main>
     </>

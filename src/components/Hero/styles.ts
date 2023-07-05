@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
-  background: #fbfbfb;
+  background: #4c087b;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -77,7 +77,8 @@ export const Text = styled.div`
     color: var(--links-clr);
     margin: 15px 10px 35px;
     line-height: 1.2;
-    bottom: 1rem;
+    bottom: 5rem;
+    padding-bottom: 1rem;
   }
 `;
 
@@ -241,6 +242,6 @@ export const BoxItem = styled.div`
 
   p {
     font-size: 14px;
-    color: #171f38;
+    color: #fff;
   }
 `;

@@ -15,6 +15,7 @@ import { AnimatePresence } from 'framer-motion';
 import Button from '../../components/buttons/Button';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 import { NextLogo } from '../../ui/next-logo';
+import Container from './container';
 import DropMenu from './DropMenu';
 
 export default function Navbar() {
@@ -26,14 +27,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-shadow ${
+      className={`sticky top-0 z-50 px-10 transition-shadow ${
         scrollPosition > 0
-          ? 'bg-opacity-70 shadow backdrop-blur-lg backdrop-filter'
+          ? 'bg-[#020617] bg-opacity-95 shadow-lg shadow-indigo-500/40 backdrop-filter'
           : 'shadow-none'
       }`}
     >
       <motion.div
-        className="brand"
+        className='brand'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -41,20 +42,20 @@ export default function Navbar() {
           ease: 'easeInOut'
         }}
       >
-        <div className="flex cursor-default items-center justify-between px-6 py-6">
-          <div className="flex h-14 items-center px-8 py-4 lg:h-auto">
+        <div className='flex cursor-default items-center justify-between py-4'>
+          <div className='flex h-14 items-center px-2 py-4 lg:h-auto'>
             <Link
-              href="/"
-              className="group flex w-full items-center gap-x-2.5"
-              aria-label="Read more about Seminole tax hike"
+              href='/'
+              className='group flex w-full items-center gap-x-2.5'
+              aria-label='Read more about Seminole tax hike'
             >
-              <div className="w-58 h-10 rounded-full border border-white/30 group-hover:border-white/50">
+              <div className='w-58 h-10 rounded-full border border-white/30 group-hover:border-white/50'>
                 <NextLogo />
               </div>
             </Link>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className='flex items-center gap-4'>
             {/* 
                 <div className="flex justify-between px-2 items-center gap-4 py-1 bg-gray-200 rounded-full">
                     <Button
@@ -65,7 +66,7 @@ export default function Navbar() {
 
             <Button
               icon={BsFillArrowRightCircleFill}
-              label="Contato"
+              label='Contato'
               onClick={() => router.push('/contact')}
             />
 
@@ -73,15 +74,15 @@ export default function Navbar() {
                     <span className="pl-2">Contact</span>
                 </button> */}
 
-            <div className="z-[999999] rounded-full bg-violet-800 p-2">
+            <div className='z-[999999] rounded-full bg-violet-800 p-2'>
               {drop ? (
                 <GrFormClose
-                  className="cursor-pointer text-[1.5rem]"
+                  className='cursor-pointer text-[1.5rem]'
                   onClick={() => setDrop(!drop)}
                 />
               ) : (
                 <RxHamburgerMenu
-                  className="cursor-pointer text-[1.5rem]"
+                  className='cursor-pointer text-[1.5rem]'
                   onClick={() => setDrop(!drop)}
                 />
               )}
