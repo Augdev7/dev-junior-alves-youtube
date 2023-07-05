@@ -28,7 +28,7 @@ export function ScrollTop() {
       {up && (
         <Scroll>
           <button onClick={handleScroll}>
-            <ArrowUp weight="bold" />
+            <ArrowUp weight='bold' />
           </button>
         </Scroll>
       )}

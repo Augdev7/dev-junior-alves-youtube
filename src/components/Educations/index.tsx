@@ -40,7 +40,6 @@ export function Educations() {
                       alt={education.subTitle}
                       width={500}
                       height={500}
-                      property
                     />
                     <p>
                       Nível: <span>{education.level} </span>
@@ -71,7 +70,6 @@ export function Educations() {
             alt='menino no computador'
             width={500}
             height={500}
-            property
           />
 
           <Carousel
@@ -88,7 +86,6 @@ export function Educations() {
                   <Image
                     width={500}
                     height={300}
-                    property
                     className='carousel'
                     key={certificate.id}
                     src={certificate.image}

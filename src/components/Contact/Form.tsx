@@ -46,67 +46,67 @@ export function Form() {
 
   return (
     <FormContent onSubmit={onSubmits}>
-      <div className="input-group">
+      <div className='input-group'>
         <input
-          type="text"
+          type='text'
           {...register('name')}
           onChange={({ target }) => setName(target.value)}
-          name="name"
-          id="name"
-          autoComplete="name"
-          placeholder=" "
+          name='name'
+          id='name'
+          autoComplete='name'
+          placeholder=' '
           required
-          className="input"
+          className='input'
         />
-        <label htmlFor="name" className="user-label">
+        <label htmlFor='name' className='user-label'>
           Nome{' '}
           <span>
-            <User size={15} weight="bold" />
+            <User size={15} weight='bold' />
           </span>
         </label>
       </div>
 
-      <div className="input-group">
+      <div className='input-group'>
         <input
-          type="email"
+          type='email'
           {...register('email')}
           onChange={({ target }) => setEmail(target.value)}
           required
-          name="email"
-          autoComplete="email"
-          id="email"
-          placeholder=" "
-          className="input"
+          name='email'
+          autoComplete='email'
+          id='email'
+          placeholder=' '
+          className='input'
         />
-        <label htmlFor="email" className="user-label">
+        <label htmlFor='email' className='user-label'>
           Email{' '}
           <span>
-            <At size={15} weight="bold" />
+            <At size={15} weight='bold' />
           </span>
         </label>
       </div>
 
-      <div className="input-group">
+      <div className='input-group'>
         <textarea
           {...register('message')}
           onChange={({ target }) => setMessage(target.value)}
-          name="description"
-          id="description"
-          autoComplete="description"
-          placeholder=" "
+          name='description'
+          id='description'
+          autoComplete='description'
+          placeholder=' '
           required
-          className="input"
+          className='input'
         ></textarea>
-        <label htmlFor="description" className="user-label">
+        <label htmlFor='description' className='user-label'>
           Mensagem{' '}
           <span>
-            <ChatText size={15} weight="bold" />
+            <ChatText size={15} weight='bold' />
           </span>
         </label>
       </div>
 
-      <ButtonSecondary type="submit">
-        Enviar <TelegramLogo size={15} weight="bold" />{' '}
+      <ButtonSecondary type='submit'>
+        Enviar <TelegramLogo size={15} weight='bold' />{' '}
       </ButtonSecondary>
     </FormContent>
   );

@@ -45,7 +45,6 @@ export default function Experiencia() {
             alt='circulo animado'
             width={666}
             height={670}
-            property
           />
 
           <Tabs
@@ -89,7 +88,6 @@ export default function Experiencia() {
                             alt={work.title}
                             width={300}
                             height={300}
-                            property
                           />
                         </div>
                         <div className='title'>
@@ -114,7 +112,6 @@ export default function Experiencia() {
                               alt={tag.name}
                               width={300}
                               height={300}
-                              property
                             />
                             <h4>{tag.name}</h4>
                           </div>

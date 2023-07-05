@@ -26,7 +26,7 @@ export const CardContactContent = styled.div`
     text-align: start;
 
     h2 {
-      color: ${(props) => props.theme.secondColor};
+      color: #5252e0;
       font-size: 1.5rem;
       margin-bottom: 1rem;
 
@@ -40,7 +40,7 @@ export const CardContactContent = styled.div`
     }
 
     p {
-      color: ${(props) => props.theme.gray};
+      color: #b1bcdc;
       max-width: 35rem;
     }
   }

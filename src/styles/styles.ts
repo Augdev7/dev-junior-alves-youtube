@@ -115,7 +115,7 @@ export const Description = styled.h4`
 
 export const Button = styled.button`
   background: #5252e0;
-  color: #EFF0F7;
+  color: #eff0f7;
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: 500;
@@ -198,15 +198,14 @@ export const ButtonSecondary = styled.button`
   margin: 50px auto;
   border: 0.25em solid #00d9ff;
   padding: 1rem 2rem;
-  color: #EFF0F7;
+  color: #eff0f7;
   font-size: 1rem;
   font-weight: 700;
   background-color: transparent;
   border-radius: 1em;
   outline: none;
   box-shadow: 0 0 1em 0.25em #5252e0,
-    0 0 4em 1em #00d9ff inset 0 0 0.75em 0.25em
-    #5252e0;
+    0 0 4em 1em #00d9ff inset 0 0 0.75em 0.25em #5252e0;
   position: relative;
   transition: all 0.3s;
 
@@ -229,14 +228,12 @@ export const ButtonSecondary = styled.button`
     color: black;
     background-color: #f6f2f2;
     box-shadow: 0 0 1em 0.25em rgb(0, 217, 255, 0.7),
-      0 0 4em 2em rgb(0, 217, 255, 0.7),
-      inset 0 0 0.75em 0.25em #f6f2f2;
+      0 0 4em 2em rgb(0, 217, 255, 0.7), inset 0 0 0.75em 0.25em #f6f2f2;
   }
 
   &:active {
     box-shadow: 0 0 0.6em 0.25em rgb(0, 217, 255, 0.7),
-      0 0 2.5em 2em rgb(0, 217, 255, 0.7),
-      inset 0 0 0.5em 0.25em #f6f2f2;
+      0 0 2.5em 2em rgb(0, 217, 255, 0.7), inset 0 0 0.5em 0.25em #f6f2f2;
   }
 `;
 
@@ -249,7 +246,7 @@ export const ButtonAlt = styled.button`
   cursor: pointer;
   border: 0.25em solid #5252e0;
   padding: 1rem 2rem;
-  color: #EFF0F7;
+  color: #eff0f7;
   font-size: 1rem;
   font-weight: 700;
   background-color: transparent;
@@ -260,10 +257,9 @@ export const ButtonAlt = styled.button`
 
   &:hover {
     color: black;
-    background-color: #EFF0F7;
+    background-color: #eff0f7;
     box-shadow: 0 0 1em 0.25em rgb(0, 217, 255, 0.7),
-      0 0 4em 2em rgb(0, 217, 255, 0.7),
-      inset 0 0 0.75em 0.25em #EFF0F7;
+      0 0 4em 2em rgb(0, 217, 255, 0.7), inset 0 0 0.75em 0.25em #eff0f7;
   }
 `;
 
@@ -278,7 +274,7 @@ export const ButtonSecondAlt = styled.button`
   background: transparent;
   border: 0.25em solid #00d9ff;
   border-radius: 10px;
-  color: #EFF0F7;
+  color: #eff0f7;
   cursor: pointer;
 
   &:hover {

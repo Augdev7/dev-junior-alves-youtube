@@ -8,16 +8,16 @@ export const Scroll = styled.div`
     bottom: 1rem;
     right: 1rem;
     font-size: 1.2rem;
-    background: ${(props) => props.theme.secondColor};
+    background: #5252e0;
     padding: 0.5rem 0.7rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    color: ${(props) => props.theme.text};
+    color: #eff0f7;
     z-index: 9;
 
     &:hover {
-      background: ${(props) => props.theme.hoverSecond};
+      background: rgb(80, 82, 224, 0.7);
     }
   }
 `;

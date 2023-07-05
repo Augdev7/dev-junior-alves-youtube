@@ -15,7 +15,6 @@ import { AnimatePresence } from 'framer-motion';
 import Button from '../../components/buttons/Button';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 import { NextLogo } from '../../ui/next-logo';
-import Container from './container';
 import DropMenu from './DropMenu';
 
 export default function Navbar() {

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
   margin-top: 5rem;
-  border-top: 1px solid ${(props) => props.theme.gray_easy};
+  border-top: 1px solid #7b89a8;
   padding: 1.4rem 0;
 
   display: flex;
@@ -20,7 +20,7 @@ export const FooterContainer = styled.footer`
 
   h4 {
     font-size: 1.1rem;
-    color: ${(props) => props.theme.gray};
+    color: #b1bcdc;
   }
 
   .links {
@@ -28,11 +28,11 @@ export const FooterContainer = styled.footer`
     display: flex;
     gap: 9px;
     font-size: 1.4rem;
-    color: ${(props) => props.theme.gray};
+    color: #b1bcdc;
 
     a {
       &:hover {
-        color: ${(props) => props.theme.firstColor};
+        color: #00d9ff;
       }
     }
   }

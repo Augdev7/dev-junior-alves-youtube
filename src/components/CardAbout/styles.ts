@@ -7,7 +7,7 @@ export const AboutContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.backgroundSecond};
+  background-color: #080d1f;
   border-radius: 10px;
   padding: 1.5rem;
   margin-top: 5rem;
@@ -28,23 +28,23 @@ export const AboutContainer = styled.section`
     max-width: 31rem;
 
     h2 {
-      color: ${(props) => props.theme.cyan_500};
+      color: #06b6d4;
     }
 
     p {
-      color: ${(props) => props.theme.textPrimary};
+      color: #d6d6dc;
     }
 
     strong {
-      color: ${(props) => props.theme.gray_easy};
+      color: #7b89a8;
 
       a {
-        color: ${(props) => props.theme.gray};
-        border-bottom: 1px solid ${(props) => props.theme.gray};
+        color: #b1bcdc;
+        border-bottom: 1px solid #b1bcdc;
 
         &:hover {
-          color: ${(props) => props.theme.cyan_400};
-          border-bottom: 1px solid ${(props) => props.theme.cyan_400};
+          color: #22d3ee;
+          border-bottom: 1px solid #22d3ee;
         }
       }
     }

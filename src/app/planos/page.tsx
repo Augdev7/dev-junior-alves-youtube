@@ -12,7 +12,7 @@ export default function PlanosPage() {
   return (
     <>
       <Pricing />
-      <Logos copy="Trusted & loved by marketing teams at world-class companies" />
+      <Logos copy='Trusted & loved by marketing teams at world-class companies' />
       <FAQ />
     </>
   );

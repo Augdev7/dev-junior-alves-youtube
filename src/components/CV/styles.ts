@@ -3,8 +3,8 @@
 import styled from 'styled-components';
 
 export const CVContainer = styled.div`
-  background: ${(props) => props.theme.dark};
-  border: 1px solid ${(props) => props.theme.border};
+  background: #080d1f;
+  border: 1px solid #262338;
   border-radius: 10px;
   text-align: center;
 `;
@@ -13,7 +13,7 @@ export const CVContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: ${(props) => props.theme.dark};
+  background: #030712;
   border-radius: 10px;
   padding: 1rem;
 
@@ -31,7 +31,7 @@ export const CVContent = styled.div`
 `;
 
 export const CVDescription = styled.div`
-  background: ${(props) => props.theme.backgroundSecond};
+  background: #080d1f;
   border-radius: 5px;
   padding: 1rem;
   position: relative;
@@ -43,7 +43,7 @@ export const CVDescription = styled.div`
   .aspas {
     position: absolute;
     font-size: 3.5rem;
-    color: ${(props) => props.theme.hoverSecond};
+    color: rgb(80, 82, 224, 0.7);
   }
 
   p {
@@ -51,7 +51,7 @@ export const CVDescription = styled.div`
     font-size: 1.1rem;
     margin-top: 2.8rem;
     margin-bottom: 2.2rem;
-    color: ${(props) => props.theme.gray};
+    color: #b1bcdc;
 
     @media (min-width: 994px) {
       font-size: 1.3rem;
@@ -64,12 +64,12 @@ export const CVDescription = styled.div`
 
     h3 {
       font-size: 1.4rem;
-      color: ${(props) => props.theme.firstColor};
+      color: #00d9ff;
     }
 
     span {
       font-size: 0.9rem;
-      color: ${(props) => props.theme.secondColor};
+      color: #5252e0;
     }
 
     img {
@@ -80,7 +80,7 @@ export const CVDescription = styled.div`
 `;
 
 export const Curriculum = styled.div`
-  background: ${(props) => props.theme.backgroundSecond};
+  background: #080d1f;
   border-radius: 5px;
   padding: 1rem 1.5rem;
   display: flex;

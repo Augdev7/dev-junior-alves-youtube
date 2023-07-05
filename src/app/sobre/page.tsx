@@ -51,7 +51,6 @@ export default function Sobre() {
                 src='/Evander.webp'
                 width={500}
                 height={500}
-                property
                 alt='Imagem de perfil Evander'
               />
 

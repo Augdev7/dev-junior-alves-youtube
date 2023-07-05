@@ -24,7 +24,7 @@ export const Icons = styled.div`
   a {
     cursor: pointer;
     &:hover {
-      color: ${(props) => props.theme.firstColor};
+      color: #00d9ff;
       transform: translateY(-4px);
       transition: transform 0.2s;
     }
@@ -36,7 +36,7 @@ export const Icons = styled.div`
     left: 8px;
     width: 3px;
     height: 6rem;
-    background: ${(props) => props.theme.firstColor};
+    background: #00d9ff;
     border-radius: 5px;
   }
 `;

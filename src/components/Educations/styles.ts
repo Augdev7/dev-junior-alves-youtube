@@ -43,8 +43,8 @@ export const List = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid ${(props) => props.theme.border};
-  background-color: ${(props) => props.theme.dark};
+  border: 1px solid #262338';
+  background-color: #030712;
   border-radius: 8px;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -62,7 +62,7 @@ export const ListImage = styled.div`
     width: 11rem;
     border-radius: 5px;
     padding: 1rem;
-    background-color: ${(props) => props.theme.backgroundSecond};
+    background-color: #080d1f;
     margin-bottom: 1rem;
   }
 
@@ -74,10 +74,10 @@ export const ListImage = styled.div`
     display: flex;
     gap: 0.5rem;
     font-size: 1rem;
-    color: ${(props) => props.theme.gray_easy};
+    color: ${props => props.theme.gray_easy};
 
     span {
-      color: ${(props) => props.theme.gray};
+      color: ${props => props.theme.gray};
     }
   }
 `;
@@ -88,11 +88,11 @@ export const ListContent = styled.div`
   h2 {
     font-size: 1.7rem;
     font-weight: 800;
-    color: ${(props) => props.theme.firstColor};
+    color: ${props => props.theme.firstColor};
   }
 
   h3 {
-    color: ${(props) => props.theme.color};
+    color: ${props => props.theme.color};
     margin-bottom: 1.1rem;
     font-size: 1rem;
   }
@@ -100,7 +100,7 @@ export const ListContent = styled.div`
   p {
     white-space: break-spaces;
     font-size: 15px;
-    color: ${(props) => props.theme.text};
+    color: ${props => props.theme.text};
   }
 `;
 

@@ -29,7 +29,6 @@ export function CV() {
                 alt='Imagem de perfil'
                 width={500}
                 height={500}
-                property
               />
               <div>
                 <h3>Evander Inacio</h3>
@@ -44,7 +43,6 @@ export function CV() {
               alt='Homem mostrando um botão de download de currículo'
               width={500}
               height={500}
-              property
             />
             <a href='/pdf/Evander-CV.pdf' download>
               <ButtonSecondAlt>

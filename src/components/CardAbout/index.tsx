@@ -16,7 +16,6 @@ export function About() {
           <Image
             width={500}
             height={500}
-            property
             className='AboutImg'
             src='/about.svg'
             alt='Imagem de perfil'

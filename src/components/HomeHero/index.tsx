@@ -34,7 +34,6 @@ import ImgHome from '/public/individuo-feliz.webp';
 import { HeroBottomCard } from '../HeroBottomCard/page';
 
 import { useRouter } from 'next/navigation';
-import { Slide } from './../Slide/index';
 import GetStarted from './../../ui/GetStarted';
 
 interface ImageCardProps extends Omit<ImageProps, 'src' | 'onLoadingComplete'> {

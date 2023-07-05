@@ -26,7 +26,6 @@ export function CardContact() {
               src='/contact.svg'
               width={680}
               height={580}
-              property
               alt='imagem de contato'
             />
           </div>
