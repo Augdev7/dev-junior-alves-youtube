@@ -82,7 +82,7 @@ interface ProjectProps {
 export const getServerSideProps = async (context: any) => {
   const { id } = context.params;
 
-  const project = projects.map((project) => ({
+  const project = projects.map(project => ({
     id: project.id,
     link: project.url,
     imgUrl: project.img,
@@ -101,7 +101,7 @@ export const getServerSideProps = async (context: any) => {
     backgroundImage: project.backgroundImage
   }));
 
-  const idProject = project.find((project) => project.link === id);
+  const idProject = project.find(project => project.link === id);
 
   return {
     props: {
@@ -115,24 +115,24 @@ export default async function Projeto({ project }: ProjectProps) {
     <>
       <Head>
         <title>{project.title} | Evander Inácio </title>
-        <meta name="description" content={project.description} />
-        <meta property="og:title" content={project.title} />
-        <meta property="og:description" content={project.description} />
-        <meta property="og:image" content={project.imgUrl} />
-        <meta property="og:image:secure_url" content={project.imgUrl} />
-        <meta name="twitter:image" content={project.imgUrl} />
-        <meta name="twitter:image:src" content={project.imgUrl} />
+        <meta name='description' content={project.description} />
+        <meta property='og:title' content={project.title} />
+        <meta property='og:description' content={project.description} />
+        <meta property='og:image' content={project.imgUrl} />
+        <meta property='og:image:secure_url' content={project.imgUrl} />
+        <meta name='twitter:image' content={project.imgUrl} />
+        <meta name='twitter:image:src' content={project.imgUrl} />
       </Head>
 
       <ProjectContainer>
         <Banner>
           <Image
-            className="bannerUrl"
+            className='bannerUrl'
             src={project.imgUrl}
             alt={project.title}
           />
-          <div className="bannerContainer">
-            <div className="bannerContent">
+          <div className='bannerContainer'>
+            <div className='bannerContent'>
               <Image src={project.icon} alt={project.title} />
               <div>
                 <h1>{project.title}</h1>
@@ -140,13 +140,13 @@ export default async function Projeto({ project }: ProjectProps) {
               </div>
             </div>
 
-            <div className="link">
-              <Link href={project.web} target="_blank">
+            <div className='link'>
+              <Link href={project.web} target='_blank'>
                 <ButtonAlt>
                   Projeto online <BsGlobe size={15} />
                 </ButtonAlt>
               </Link>
-              <Link href={project.github} target="_blank">
+              <Link href={project.github} target='_blank'>
                 <ButtonAlt>
                   Repositório <FaGithub size={17} />
                 </ButtonAlt>
@@ -156,7 +156,7 @@ export default async function Projeto({ project }: ProjectProps) {
         </Banner>
 
         <DescriptionProject>
-          <div className="description">
+          <div className='description'>
             <Title>
               Descrição
               <span>
@@ -181,11 +181,11 @@ export default async function Projeto({ project }: ProjectProps) {
 
           <TagsContainer>
             {project.tags &&
-              project.tags.map((tag) => {
+              project.tags.map(tag => {
                 return (
                   <TagsContent key={tag.id} color={tag.color}>
                     <div
-                      className="card-icon"
+                      className='card-icon'
                       style={{
                         backgroundColor: `rgba(${tag.rgb}, .1)`,
                         border: `1px solid ${tag.color}`
@@ -236,9 +236,9 @@ export default async function Projeto({ project }: ProjectProps) {
 
             <Print>
               {project.print &&
-                project.print.map((print) => {
+                project.print.map(print => {
                   return (
-                    <div className="print-list" key={print.id}>
+                    <div className='print-list' key={print.id}>
                       <h3>{print.name}</h3>
                       <Image
                         width={800}
@@ -254,21 +254,21 @@ export default async function Projeto({ project }: ProjectProps) {
         </PrintContainer>
 
         <ContainerVideo>
-          <div className="imageVideo">
+          <div className='imageVideo'>
             <Image src={project.backgroundImage} alt={project.title} />
           </div>
-          <Title className="title-video">
+          <Title className='title-video'>
             Video
             <span>
               <YoutubeLogo /> Video
             </span>
-            <Image className="vector" src="/vectors/youtube.svg" alt="" />
+            <Image className='vector' src='/vectors/youtube.svg' alt='' />
           </Title>
           <Video>
             <ReactPlayer
               url={project.video}
-              width="100%"
-              height="100%"
+              width='100%'
+              height='100%'
               controls={true}
               pip
               config={{ file: { forceHLS: true } }}
@@ -276,7 +276,7 @@ export default async function Projeto({ project }: ProjectProps) {
           </Video>
         </ContainerVideo>
 
-        <div className="allProjects">
+        <div className='allProjects'>
           <AllProjects title={'Veja outros projetos'} />
         </div>
         <Link href={'/#projects'}>
@@ -284,7 +284,7 @@ export default async function Projeto({ project }: ProjectProps) {
             <a>
               <ArrowLeft
                 style={{ marginBottom: '-0.2rem' }}
-                weight="bold"
+                weight='bold'
                 size={18}
               />{' '}
               Voltar

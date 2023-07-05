@@ -1,11 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
-import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiOutlineDesktopComputer } from 'react-icons/hi';
 
-import { siteConfig } from '@/config';
 import projects from '@/data/projects';
 import {
   ProjectsContainer,
@@ -18,12 +16,6 @@ import { ArrowLeft, ArrowRight } from 'phosphor-react';
 import { Footer } from '@/components/Footer';
 import { Links } from '@/components/Links';
 import { ScrollTop } from '@/components/ScrollTop';
-
-import { constructMetadata } from '@/lib/utils';
-
-export const metadata = constructMetadata({
-  title: 'PROJETOS - UP.EXPERT'
-});
 
 export default function Projetos() {
   return (
@@ -98,15 +90,15 @@ export default function Projetos() {
                       </div>
                       <Link href={`/project/${project.url}`}>
                         <button>
-                            Ver projeto
-                            <ArrowRight
-                              style={{
-                                marginBottom: '-0.1rem',
-                                marginLeft: '0.5rem'
-                              }}
-                              weight='bold'
-                              size={16}
-                            />
+                          Ver projeto
+                          <ArrowRight
+                            style={{
+                              marginBottom: '-0.1rem',
+                              marginLeft: '0.5rem'
+                            }}
+                            weight='bold'
+                            size={16}
+                          />
                         </button>
                       </Link>
                     </div>
