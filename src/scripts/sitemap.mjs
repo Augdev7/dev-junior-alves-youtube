@@ -6,16 +6,16 @@ import prettier from 'prettier';
 const pages = await globby(['pages/*.tsx', 'data/**/*.mdx', '!pages/_*.tsx']);
 
 const urlTags = pages
-  .map((file) =>
+  .map(file =>
     file
       .replace('pages', '')
       .replace('data/content', '')
       .replace('.tsx', '')
       .replace('.mdx', '')
   )
-  .map((path) => (path === '/index' ? '/' : path))
+  .map(path => (path === '/index' ? '/' : path))
   .map(
-    (path) => `
+    path => `
       <url>
           <loc>localhost:3000${path}</loc>
       </url>

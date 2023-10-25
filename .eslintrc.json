@@ -11,6 +11,7 @@
     "plugin:sonarjs/recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "eslint-config-prettier",
     "plugin:prettier/recommended"
   ],
   "settings": {
@@ -58,14 +59,14 @@
 
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "prettier/prettier": [
-      "error",
+      "warn",
       {
+        "quoteProps": "as-needed",
         "trailingComma": "none",
-        "semi": true,
         "singleQuote": true,
-        "tailwindConfig": "./tailwind.config.js",
-        "plugins": ["prettier-plugin-tailwindcss"],
-        "pluginSearchDirs": false
+        "jsxSingleQuote": true,
+        "useTabs": false,
+        "tabWidth": 2
       }
     ],
     "import-helpers/order-imports": [
