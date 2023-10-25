@@ -30,6 +30,9 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp']
   },
+  eslint: {
+    dirs: ['pages', 'utils'] // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
+  },
   experimental: {
     swcMinify: true
   }

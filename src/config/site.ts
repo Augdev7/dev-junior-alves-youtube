@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
   title: 'Senior Software Engineer e content creator.',
   subtitle:
     'Bem vindo ao meu blog! Eu sou Junior Alves, apaixonado por tecnologia, sempre buscando aprender algo novo todos os dias.',
-  url: process.env.SITE_URL ?? 'https://devjuniorplus.com.br/',
+  url: process.env.SITE_URL ?? 'https://upexpert.com.br/',
   ogImage: `${process.env.SITE_URL}/og.jpg`,
   links: {
     youtube: 'https://www.youtube.com/@devjunioralves',
